@@ -19,10 +19,10 @@ jobs:
       id: sub_manifest_link_version
       uses: microsoft/variable-substitution@v1
       with:
-        files: 'system.json'
+        files: '${{ env.package_type }}.json'
       env:
         version: ${{github.event.release.tag_name}}
-        download: https://github.com/${{github.repository}}/releases/download/${{github.event.release.tag_name}}/system.zip
+        download: https://github.com/${{github.repository}}/releases/download/${{github.event.release.tag_name}}/${{ env.package_type }}.zip
         flags: "{}"
 
     - name: Create destination directory for compiled CSS
@@ -39,7 +39,7 @@ jobs:
     #     npm install @foundryvtt/foundryvtt-cli --save-dev
     #     node scripts/convertJSONtoLDB.mjs
 
-    # Create a zip file with all files required by the system to add to the release
+    # Create a zip file with all files required by the system/module to add to the release
     - run: zip -r ${{ env.package_type }}.zip README.md module.json css/ lang/ module/
 
     # Create a release for this specific version
