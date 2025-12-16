@@ -111,11 +111,11 @@ export function prepareZoneLabel(cost, scene, paths) {
 
   if (isEngaged)
     delta = game.settings.get("zone-movement", "EngagedText") || "ZONE-MOVEMENT.DistanceLabel.Engaged.Default";
-  else if (cost > 4)
+  else if (cost >= (game.settings.get("zone-movement", "ExtremeRange") || 5))
     delta = game.settings.get("zone-movement", "ExtremeText") || "ZONE-MOVEMENT.DistanceLabel.Extreme.Default";
-  else if (cost > 1)
+  else if (cost >= (game.settings.get("zone-movement", "LongRange") || 2))
     delta = game.settings.get("zone-movement", "LongText") || "ZONE-MOVEMENT.DistanceLabel.Long.Default";
-  else if (cost == 1)
+  else if (cost >= (game.settings.get("zone-movement", "MediumRange") || 1))
     delta = game.settings.get("zone-movement", "MediumText") || "ZONE-MOVEMENT.DistanceLabel.Medium.Default";
   delta = game.i18n.localize(delta);
 

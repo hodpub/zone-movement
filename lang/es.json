@@ -6,28 +6,40 @@
       "Hint": "Conmutar para mostrar etiquetas de distancia al poner rutas de movimiento, basado en las reglas de Coriolis: The Great Dark.",
       "Engaged": {
         "Name": "Etiqueta trabado",
-        "Hint": "Etiqueta para la distancia Trabado (casilla contigua/menos del tamaño de rejilla). Dejarlo vacío para usar el valor por defecto ('Trabado'), o pon tu etiqueta personalizada. Acepta una clave de traducción.",
+        "Hint": "Etiqueta para la distancia trabado (casilla contigua/menos del tamaño de rejilla). Dejarlo vacío para usar el valor por defecto ('Trabado'), o pon tu etiqueta personalizada. Acepta una clave de traducción.",
         "Default": "Trabado"
       },
       "Short": {
         "Name": "Etiqueta corta",
-        "Hint": "Etiqueta para la distancia Corta (misma región). Dejarlo vacío para usar el valor por defecto ('Corta'), o pon tu etiqueta personalizada. Acepta una clave de traducción.",
+        "Hint": "Etiqueta para la distancia corta (misma región). Dejarlo vacío para usar el valor por defecto ('Corta'), o pon tu etiqueta personalizada. Acepta una clave de traducción.",
         "Default": "Corta"
       },
       "Medium": {
         "Name": "Etiqueta media",
-        "Hint": "Etiqueta para la distancia Media (región adyacente). Dejarlo vacío para usar el valor por defecto ('Media'), o pon tu etiqueta personalizada. Acepta una clave de traducción.",
-        "Default": "Media"
+        "Hint": "Etiqueta para la distancia media. Dejarlo vacío para usar el valor por defecto ('Media'), o pon tu etiqueta personalizada. Acepta una clave de traducción.",
+        "Default": "Media",
+		"Zones": {
+          "Name": "Zonas para media",
+          "Hint": "Número de zonas para que se considere que una distancia es media, por defecto es 1. Por lo tanto 1 (porque 2 es larga) zona se considera distancia media. Corta es siempre la misma región (distancia 0) y trabado es la casilla contigua."
+        }
       },
       "Long": {
         "Name": "Etiqueta larga",
-        "Hint": "Etiqueta para la distancia Larga (entre dos y cuatro regiones). Dejarlo vacío para usar el valor por defecto ('Larga'), o pon tu etiqueta personalizada. Acepta una clave de traducción.",
-        "Default": "Larga"
+        "Hint": "Etiqueta para la distancia larga. Dejarlo vacío para usar el valor por defecto ('Larga'), o pon tu etiqueta personalizada. Acepta una clave de traducción.",
+        "Default": "Larga",
+		"Zones": {
+          "Name": "Zonas para larga",
+          "Hint": "Número de zonas para que se considere que una distancia es larga, por defecto es 2. Por lo tanto entre 2 y 4 (porque 5 es extrema) zonas se considera distancia larga."
+        }
       },
       "Extreme": {
         "Name": "Etiqueta extrema",
-        "Hint": "Etiqueta para la distancia Extrema (más de cuatro regiones). Dejarlo vacío para usar el valor por defecto ('Extrema'), o pon tu etiqueta personalizada. Acepta una clave de traducción.",
-        "Default": "Extrema"
+        "Hint": "Etiqueta para la distancia extrema. Dejarlo vacío para usar el valor por defecto ('Extrema'), o pon tu etiqueta personalizada. Acepta una clave de traducción.",
+        "Default": "Extrema",
+		"Zones": {
+          "Name": "Zonas para extrema",
+          "Hint": "Número de zonas para que se considere que una distancia es extrema, por defecto es 5."
+        }
       }
     },
     "CountNoRegionAsZone": {

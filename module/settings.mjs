@@ -20,6 +20,17 @@ function allSettings() {
     }
   });
 
+  ["Extreme", "Long", "Medium"].forEach(label => {
+    settingsToRegister[`${label}Range`] = {
+      config: true,
+      name: `ZONE-MOVEMENT.DistanceLabel.${label}.Zones.Name`,
+      hint: `ZONE-MOVEMENT.DistanceLabel.${label}.Zones.Hint`,
+      scope: 'world',
+      type: String,
+      default: null,
+    }
+  });
+
   settingsToRegister.countNoRegionAsZone = {
     config: true,
     name: "ZONE-MOVEMENT.CountNoRegionAsZone.Name",
