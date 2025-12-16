@@ -20,7 +20,7 @@
         "Default": "Media",
 		"Zones": {
           "Name": "Zonas para media",
-          "Hint": "Número de zonas para que se considere que una distancia es media, por defecto es 1. Por lo tanto 1 (porque 2 es larga) zona se considera distancia media. Corta es siempre la misma región (distancia 0) y trabado es la casilla contigua."
+          "Hint": "Número de zonas para que se considere que una distancia es media, por defecto es 1. Por lo tanto 1 (porque 2 es larga) zona se considera distancia media. Corta es menos que media (distancia 0 por defecto) y trabado es la casilla contigua."
         }
       },
       "Long": {
