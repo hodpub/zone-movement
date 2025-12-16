@@ -98,9 +98,9 @@ export function calculateZoneCost(paths, scene) {
 }
 
 export function prepareZoneLabel(cost, scene, paths) {
-  let unit = game.i18n.localize("ZONE-MOVEMENT.zone");
-  if (cost != 1)
-    unit += "s";
+  let unit = game.i18n.localize("ZONE-MOVEMENT.zone.plural");
+  if (cost == 1)
+    unit = game.i18n.localize("ZONE-MOVEMENT.zone.singular");
 
   const showProximity = game.settings.get("zone-movement", "showLabels");
   if (!showProximity)

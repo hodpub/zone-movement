@@ -18,7 +18,7 @@
         "Name": "Etiqueta media",
         "Hint": "Etiqueta para la distancia media. Dejarlo vacío para usar el valor por defecto ('Media'), o pon tu etiqueta personalizada. Acepta una clave de traducción.",
         "Default": "Media",
-		"Zones": {
+        "Ranges": {
           "Name": "Zonas para media",
           "Hint": "Número de zonas para que se considere que una distancia es media, por defecto es 1. Por lo tanto 1 (porque 2 es larga) zona se considera distancia media. Corta es menos que media (distancia 0 por defecto) y trabado es la casilla contigua."
         }
@@ -27,7 +27,7 @@
         "Name": "Etiqueta larga",
         "Hint": "Etiqueta para la distancia larga. Dejarlo vacío para usar el valor por defecto ('Larga'), o pon tu etiqueta personalizada. Acepta una clave de traducción.",
         "Default": "Larga",
-		"Zones": {
+        "Ranges": {
           "Name": "Zonas para larga",
           "Hint": "Número de zonas para que se considere que una distancia es larga, por defecto es 2. Por lo tanto entre 2 y 4 (porque 5 es extrema) zonas se considera distancia larga."
         }
@@ -36,7 +36,7 @@
         "Name": "Etiqueta extrema",
         "Hint": "Etiqueta para la distancia extrema. Dejarlo vacío para usar el valor por defecto ('Extrema'), o pon tu etiqueta personalizada. Acepta una clave de traducción.",
         "Default": "Extrema",
-		"Zones": {
+        "Ranges": {
           "Name": "Zonas para extrema",
           "Hint": "Número de zonas para que se considere que una distancia es extrema, por defecto es 5."
         }

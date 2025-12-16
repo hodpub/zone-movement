@@ -23,8 +23,8 @@ function allSettings() {
   ["Extreme", "Long", "Medium"].forEach(label => {
     settingsToRegister[`${label}Range`] = {
       config: true,
-      name: `ZONE-MOVEMENT.DistanceLabel.${label}.Zones.Name`,
-      hint: `ZONE-MOVEMENT.DistanceLabel.${label}.Zones.Hint`,
+      name: `ZONE-MOVEMENT.DistanceLabel.${label}.Ranges.Name`,
+      hint: `ZONE-MOVEMENT.DistanceLabel.${label}.Ranges.Hint`,
       scope: 'world',
       type: Number,
       default: null,
