@@ -1,10 +1,13 @@
 export function getPath(waypoint) {
   if (!waypoint.previous) return [];
 
-  const paths = [];
-
   const grid = game.canvas.grid;
+
+  if (grid.type == CONST.GRID_TYPES.GRIDLESS)
+    return getGridlessPath(waypoint, grid.size);
+
   let point = waypoint;
+  const paths = [];
 
   while (point.previous) {
     const start = grid.getOffset({ x: point.previous.x, y: point.previous.y, elevation: point.previous.elevation });
@@ -17,6 +20,40 @@ export function getPath(waypoint) {
     }
     point = point.previous;
   }
+  return paths.reverse();
+}
+
+function getGridlessPath(waypoint, step) {
+  if (!waypoint.previous) return [];
+  const paths = [];
+
+  const grid = game.canvas.grid;
+  let point = waypoint;
+
+  while (point.previous) {
+    const start = point.previous;
+    const end = point;
+
+    const dx = end.x - start.x;
+    const dy = end.y - start.y;
+    const distance = Math.hypot(dx, dy);
+
+    if (distance === 0) return [{ x: start.x, y: start.y }];
+
+    const steps = Math.max(1, Math.floor(distance / step));
+
+    for (let i = steps; i >= 0; i--) {
+      const t = i / steps;
+      paths.push({
+        x: start.x + dx * t,
+        y: start.y + dy * t,
+        elevation: 0
+      });
+    }
+
+    point = point.previous;
+  }
+
   return paths.reverse();
 }
 
