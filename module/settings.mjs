@@ -26,7 +26,7 @@ function allSettings() {
       name: `ZONE-MOVEMENT.DistanceLabel.${label}.Zones.Name`,
       hint: `ZONE-MOVEMENT.DistanceLabel.${label}.Zones.Hint`,
       scope: 'world',
-      type: String,
+      type: Number,
       default: null,
     }
   });
