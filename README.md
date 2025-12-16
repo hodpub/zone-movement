@@ -42,3 +42,4 @@ However, if the system does any change on the Canvas' Ruler or the Token's Ruler
 If you test a new system, open a PR with the new system on this list.
 - [Coriolis: The Great Dark](https://foundryvtt.com/packages/coriolis-tgd), from Free League
 - [Invincible](https://foundryvtt.com/packages/invincible), from Free League
+- [Coriolis: The Third Horizon](https://foundryvtt.com/packages/yzecoriolis), from Free League
