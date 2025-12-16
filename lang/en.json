@@ -20,7 +20,7 @@
         "Default": "Medium",
 		"Zones": {
           "Name": "Zones to be within Medium",
-          "Hint": "Number of zones for a distance to be Medium, defaults to 1. So 1 (since 2 is Long) zone is considered to be Medium. Short is always 0 distance (same region) and Engaged is alwats adjacent square."
+          "Hint": "Number of zones for a distance to be Medium, defaults to 1. So 1 (since 2 is Long) zone is considered to be Medium. Short is less than Medium (defaults to 0 distance) and Engaged is alwats adjacent square."
         }
       },
       "Long": {
