@@ -7,7 +7,7 @@ export default class ZoneCanvasRuler extends foundry.canvas.interaction.Ruler {
     if (!context) return;
 
     const scene = game.scenes.current;
-    if (scene.grid.units != "zone")
+    if (scene.grid.units != game.i18n.localize("ZONE-MOVEMENT.zone"))
       return context;
 
     const paths = getPath(waypoint);

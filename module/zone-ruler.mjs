@@ -98,7 +98,7 @@ export function calculateZoneCost(paths, scene) {
 }
 
 export function prepareZoneLabel(cost, scene, paths) {
-  let unit = "zone";
+  let unit = game.i18n.localize("ZONE-MOVEMENT.zone");
   if (cost != 1)
     unit += "s";
 

@@ -6,7 +6,7 @@ export default class ZoneTokenRuler extends foundry.canvas.placeables.tokens.Tok
     if (!context) return;
 
     const scene = game.scenes.current;
-    if (scene.grid.units != "zone")
+    if (scene.grid.units != game.i18n.localize("ZONE-MOVEMENT.zone"))
       return context;
 
     const paths = getPath(waypoint);

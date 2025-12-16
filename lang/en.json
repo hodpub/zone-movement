@@ -1,5 +1,6 @@
 {
   "ZONE-MOVEMENT": {
+    "zone": "zone",
     "DistanceLabel": {
       "Name": "Show Distance Labels",
       "Hint": "Toggle to display distance labels on movement paths, based on Coriolis: The Great Dark rules.",
