@@ -47,7 +47,7 @@
     },
     "CountNoRegionAsZone": {
       "Name": "Count No Region as Zone",
-      "Hint": "If enabled, areas without a defined region will be treated as their own zone for movement calculations. If you are using gridless maps, or if you have gaps between regions, you may want to enable this setting."
+      "Hint": "If enabled, areas without a defined region will be treated as their own zone for movement calculations. If you are using gridless maps, you may not want to enable this setting, as regions boundaries are counted as not being inside the zones, and tokens can, in some edge cases, end their movement on a boundary, causing some wrong calculations on the next movement."
     },
     "GridlessStepSize": {
       "Name": "Gridless Step Size",

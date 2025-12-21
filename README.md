@@ -37,9 +37,16 @@ And that's it!
 - Consider or skip areas without regions on the zone calculation
 
 ## Gridless maps
-Although the module supports gridless maps, it is important to mention that some distances are not 100% accurated. Especially in cases where the token is very close to the border of the region.
+The module now fully supports gridless maps, with a small caveats: we recommend to disable the "Count No Region as Zone". For gridless maps, we generate the paths for zone calculation dynamically. Foundry APIs consider that a region boundary is not "inside" the region itself, which means that if a point of the movement hits the boundary of the region, it will wrongly calculate that point as a new region.
 
-If you are having issues with that, you can try to change the new configuraiton "Gridless Step Size" to a smaller value. This will create more "steps" on the movement line. This will improve accuracy, but may increase calculation times.
+## Debug options
+To make it easier to debug some edge cases, there are two configurations.
+
+The first option, **Draw Token Points**, will draw dots on the map to show the points that were used for the zone calculations.
+
+The second option, **Log Debug Messages**, will log messages with the path information.
+
+If you are having some issues, please, enable these options so you can provide the debug data for us.
 
 # Tested Systems
 Systems do not need to do anything to use this module. It should be fairly simple to use it.
