@@ -33,8 +33,8 @@ function getGridlessPath(waypoint, step) {
   let point = waypoint;
 
   while (point.previous) {
-    const start = point.previous;
-    const end = point;
+    const start = point.previous.center ?? point.previous;
+    const end = point.center ?? point;
 
     const dx = end.x - start.x;
     const dy = end.y - start.y;
