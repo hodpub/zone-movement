@@ -27,8 +27,6 @@ export function getPath(waypoint) {
 function getGridlessPath(waypoint, step) {
   if (!waypoint.previous) return [];
   const paths = [];
-
-  const grid = game.canvas.grid;
   let point = waypoint;
 
   while (point.previous) {
@@ -39,18 +37,37 @@ function getGridlessPath(waypoint, step) {
     const dy = end.y - start.y;
     const distance = Math.hypot(dx, dy);
 
-    if (distance === 0) return [{ x: start.x, y: start.y }];
+    if (distance === 0) {
+      paths.push({
+        x: start.x,
+        y: start.y,
+        elevation: 0
+      });
+      point = point.previous;
+      continue;
+    }
 
-    const steps = Math.max(1, Math.floor(distance / step));
+    const ux = dx / distance;
+    const uy = dy / distance;
+
+    const steps = Math.floor(distance / step);
+    let firstSegment = true;
 
     for (let i = steps; i >= 0; i--) {
-      const t = i / steps;
+      if (!firstSegment && i === steps) continue;
       paths.push({
-        x: start.x + dx * t,
-        y: start.y + dy * t,
+        x: start.x + ux * step * i,
+        y: start.y + uy * step * i,
         elevation: 0
       });
     }
+    firstSegment = false;
+
+    paths.push({
+      x: end.x,
+      y: end.y,
+      elevation: 0
+    });
 
     point = point.previous;
   }
