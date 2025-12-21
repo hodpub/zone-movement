@@ -94,7 +94,7 @@ export function calculateZoneCost(paths, scene, executed = false) {
       if (!coordinateInRegion)
         continue;
 
-      if (first)
+      if (first || (!previousZone && !countNoRegionAsZone))
         previousZone = region.id;
       if (currentZone && logDebugMessages)
         console.warn("Zone Movement | Warning: Multiple regions detected at the same point:", path, "Regions:", currentZone, region.id);
