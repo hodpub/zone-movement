@@ -48,6 +48,18 @@
     "CountNoRegionAsZone": {
       "Name": "Contar sin región como otra zona",
       "Hint": "Si se habilita, las áreas que no tengan una región definida se tratarán como si fuesen una zona adicional a la hora de calcular el movimiento. Si usas mapas sin rejilla, o si tienes huecos entre regiones, es recomendable que actives esta opción."
+    },
+    "GridlessStepSize": {
+      "Name": "Tamaño de paso",
+      "Hint": "Cuando se use mapas sin rejilla, el módulo calculara las rutas basándose en la linea de movimiento. Para hacerlo así, podemos usar el tamaño de rejilla (por defecto este valor está vacío) o usando un valor definido (en píxeles). Ten en cuenta que valores pequeños de paso aumentarán la precisión pero también aumentará el tiempo de cálculo."
+    },
+    "DrawTokenPoints": {
+      "Name": "Dibujar puntos de ficha",
+      "Hint": "Si se habilita, se dibujaran puntos en la ruta centrada en la ficha. Esto ayuda a visualizar la ruta exacta, especialmente en mapas sin rejilla. Cada movimiento tendrá puntos de diferente color. Refresque la página para limpiar los puntos actuales."
+    },
+    "LogDebugMessages": {
+      "Name": "Registrar mensajes de depuración",
+      "Hint": "Si se habilita, se mostrarán mensajes de depuración en la consola, incluyendo avisos de regiones que se suporponen o cambios en las zonas durante los cálculos de movimiento. Es útil para solucionar errores."
     }
   }
 }
