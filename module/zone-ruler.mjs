@@ -3,7 +3,6 @@ export function getPath(waypoint) {
 
   const grid = game.canvas.grid;
   const gridSize = game.settings.get("zone-movement", "gridlessStepSize") || grid.size;
-  console.log("Grid Size for Zone Movement:", gridSize);
 
   if (grid.type == CONST.GRID_TYPES.GRIDLESS)
     return getGridlessPath(waypoint, gridSize);
@@ -59,12 +58,13 @@ function getGridlessPath(waypoint, step) {
   return paths.reverse();
 }
 
-export function calculateZoneCost(paths, scene) {
+export function calculateZoneCost(paths, scene, executed = false) {
   let cost = 0;
   let previousZone = null;
   let currentZone = null;
   let first = true;
   const countNoRegionAsZone = game.settings.get("zone-movement", "countNoRegionAsZone");
+  const logDebugMessages = game.settings.get("zone-movement", "logDebugMessages");
   for (const path of paths) {
     currentZone = null;
     for (const region of scene.regions) {
@@ -79,6 +79,9 @@ export function calculateZoneCost(paths, scene) {
 
       if (first)
         previousZone = region.id;
+      if (currentZone && logDebugMessages)
+        console.warn("Zone Movement | Warning: Multiple regions detected at the same point:", path, "Regions:", currentZone, region.id);
+
       currentZone = region.id;
       break;
     }
@@ -93,6 +96,8 @@ export function calculateZoneCost(paths, scene) {
     if (previousZone == null && !countNoRegionAsZone)
       continue;
 
+    if (executed && logDebugMessages)
+      console.log("Zone Movement | Zone change detected at point:", path, "From:", previousZone, "To:", currentZone);
     cost += 1;
     previousZone = currentZone;
   }

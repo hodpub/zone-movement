@@ -54,6 +54,24 @@ function allSettings() {
     },
   };
 
+  settingsToRegister.drawTokenPoints = {
+    config: true,
+    name: "ZONE-MOVEMENT.DrawTokenPoints.Name",
+    hint: "ZONE-MOVEMENT.DrawTokenPoints.Hint",
+    scope: 'world',
+    type: Boolean,
+    default: false,
+  };
+
+  settingsToRegister.logDebugMessages = {
+    config: true,
+    name: "ZONE-MOVEMENT.LogDebugMessages.Name",
+    hint: "ZONE-MOVEMENT.LogDebugMessages.Hint",
+    scope: 'world',
+    type: Boolean,
+    default: false,
+  };
+
   return settingsToRegister;
 }
 

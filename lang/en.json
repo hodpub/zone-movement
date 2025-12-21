@@ -52,6 +52,14 @@
     "GridlessStepSize": {
       "Name": "Gridless Step Size",
       "Hint": "When using gridless maps, the module will calculate the paths based on the movement line. To do that, we can use the grid size (default, if the value is empty) or use a defined size (in pixels). Keep in mind that smaller step sizes will improve the accuracy but may increase calculation time."
+    },
+    "DrawTokenPoints": {
+      "Name": "Draw Token Points",
+      "Hint": "If enabled, the module will draw some points on the movement path, centered on the token. This can help visualize the exact path taken, especially on gridless maps. Each movement will get a point with a different colour. Refresh the page to clear old points."
+    },
+    "LogDebugMessages": {
+      "Name": "Log Debug Messages",
+      "Hint": "If enabled, the module will log debug messages to the console, including warnings about overlapping regions and zone changes during movement calculations. Useful for troubleshooting."
     }
   }
 }
